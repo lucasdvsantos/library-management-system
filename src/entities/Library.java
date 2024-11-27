@@ -34,14 +34,14 @@ public class Library {
 
 	public void listBooks() {
 		for (Book b : books) {
-			System.out.println("Book: " + b.getTitle() + " Available: " + b.getIsAvailable());
+			System.out.println(b);
 		}
 	}
 	
 	public void listBorrowedBooks() {
 		for (Book b : books) {
 			if (b.getIsAvailable() == false) {
-				System.out.println("Book: " + b.getTitle() + " Available: " + b.getIsAvailable());
+				System.out.println(b);
 			}
 		}
 	}
@@ -52,6 +52,7 @@ public class Library {
 				return b;
 			}
 		}
+		System.out.println("Book not found");
 		return null;
 	}
 	
@@ -61,14 +62,25 @@ public class Library {
 				return b;
 			}
 		}
+		System.out.println("Book not found");
 		return null;
 	}
 	
 	protected void addBook(Book book) {
-		books.add(book);
+		if (books.contains(book) == false) {
+			books.add(book);
+		} else {
+			System.out.println("Book already added");
+		}
+		
 	}
 	
 	protected void removeBook(Book book) {
-		books.remove(book);
+		if (books.contains(book) == true) {
+			books.remove(book);
+		} else {
+			System.out.println("Book doesn't exist");
+		}
+		
 	}
 }
