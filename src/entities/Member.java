@@ -58,4 +58,9 @@ public class Member {
 		
 	}
 
+	@Override
+	public String toString() {
+		return "Member [name=" + name + ", memberId=" + memberId + ", borrowedBooks=" + borrowedBooks + "]";
+	}
+
 }
