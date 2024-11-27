@@ -46,7 +46,7 @@ public class Library {
 		}
 	}
 	
-	public Book searchByTitle(String title) {
+	protected Book searchByTitle(String title) {
 		for (Book b : books) {
 			if (b.getTitle().equals(title)) {
 				return b;
@@ -55,7 +55,7 @@ public class Library {
 		return null;
 	}
 	
-	public Book searchByAuthor(String author) {
+	protected Book searchByAuthor(String author) {
 		for (Book b : books) {
 			if (b.getAuthor().equals(author)) {
 				return b;
