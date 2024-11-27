@@ -48,7 +48,10 @@ public class Book {
 	public void setAvailability(Boolean option) {
 		this.isAvailable = option;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", author=" + author + ", isbn=" + isbn + ", isAvailable=" + isAvailable + "]";
+	}
+	
 }
