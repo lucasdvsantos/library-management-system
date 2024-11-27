@@ -63,4 +63,12 @@ public class Library {
 		}
 		return null;
 	}
+	
+	protected void addBook(Book book) {
+		books.add(book);
+	}
+	
+	protected void removeBook(Book book) {
+		books.remove(book);
+	}
 }
