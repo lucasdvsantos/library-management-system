@@ -39,11 +39,23 @@ public class Member {
 	}
 	
 	public void borrowBook(Book book) {
-		borrowedBooks.add(book);
+		if (book.getIsAvailable() == true) {
+			borrowedBooks.add(book);
+			book.setAvailability(false);	
+		} else {
+			System.out.println("Book not available");
+		}
+		
 	}
 	
 	public void returnBook(Book book) {
-		borrowedBooks.remove(book);
+		if (borrowedBooks.contains(book) == true) {
+			borrowedBooks.remove(book);
+			book.setAvailability(true);
+		} else {
+			System.out.println("This book wasn't borrowed");
+		}
+		
 	}
 
 }
