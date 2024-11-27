@@ -6,14 +6,14 @@ import java.util.List;
 public class Member {
 	
 	private String name;
-	private int memberId;
+	private String memberId;
 	
 	private List<Book> borrowedBooks = new ArrayList<>();
 	
 	public Member() {
 	}
 	
-	public Member(String name, int memberId) {
+	public Member(String name, String memberId) {
 		this.name = name;
 		this.memberId = memberId;
 	}
@@ -26,16 +26,18 @@ public class Member {
 		this.name = name;
 	}
 	
-	public int getMemberId() {
+	public String getMemberId() {
 		return memberId;
 	}
 	
-	public void setMemberId(int memberId) {
+	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
 	
-	public List<Book> getBorrowedBooks() {
-		return borrowedBooks;
+	public void getBorrowedBooks() {
+		for (Book b : borrowedBooks) {
+			System.out.println(b);
+		}
 	}
 	
 	public void borrowBook(Library library, Book book) {

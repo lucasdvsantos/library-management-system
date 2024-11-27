@@ -34,14 +34,14 @@ public class Library {
 
 	public void listBooks() {
 		for (Book b : books) {
-			System.out.println(b);
+			System.out.println(b.toString());
 		}
 	}
 	
 	public void listBorrowedBooks() {
 		for (Book b : books) {
 			if (b.getIsAvailable() == false) {
-				System.out.println(b);
+				System.out.println(b.toString());
 			}
 		}
 	}

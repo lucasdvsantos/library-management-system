@@ -3,12 +3,12 @@ package entities;
 public class Librarian {
 
 	private String name;
-	private int employeeId;
+	private String employeeId;
 	
 	public Librarian() {
 	}
 
-	public Librarian(String name, int employeeId) {
+	public Librarian(String name, String employeeId) {
 		this.name = name;
 		this.employeeId = employeeId;
 	}
@@ -21,11 +21,11 @@ public class Librarian {
 		this.name = name;
 	}
 
-	public int getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 	
