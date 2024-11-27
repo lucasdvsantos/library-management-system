@@ -14,7 +14,7 @@ public class Book {
 		this.title = title;
 		this.author = author;
 		this.isbn = isbn;
-		this.isAvailable = isAvailable;
+		this.isAvailable = isAvailable != null ? isAvailable : true;
 	}
 	
 	public String getTitle() {
@@ -22,6 +22,9 @@ public class Book {
 	}
 	
 	public void setTitle(String title) {
+		if (title == null || title.trim().isEmpty()) {
+			throw new IllegalArgumentException("Title can't be null or empty");
+		}
 		this.title = title;
 	}
 	
@@ -30,6 +33,9 @@ public class Book {
 	}
 	
 	public void setAuthor(String author) {
+		if (author == null || author.trim().isEmpty()) {
+			throw new IllegalArgumentException("Author can't be null or empty");
+		}
 		this.author = author;
 	}
 	
@@ -45,8 +51,8 @@ public class Book {
 		return isAvailable;
 	}
 	
-	public void setAvailability(Boolean option) {
-		this.isAvailable = option;
+	public void setAvailable(Boolean isAvailable) {
+		this.isAvailable = isAvailable;
 	}
 
 	@Override

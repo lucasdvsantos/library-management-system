@@ -44,7 +44,7 @@ public class Member {
 		if (library.getMembers().contains(this) == true) {
 			if (book.getIsAvailable() == true) {
 				borrowedBooks.add(book);
-				book.setAvailability(false);	
+				book.setAvailable(false);	
 			} else {
 				System.out.println("Book not available");
 			}
@@ -57,7 +57,7 @@ public class Member {
 		if (library.getMembers().contains(this) == true) {
 			if (borrowedBooks.contains(book) == true) {
 				borrowedBooks.remove(book);
-				book.setAvailability(true);
+				book.setAvailable(true);
 			} else {
 				System.out.println("This book wasn't borrowed");
 			}
