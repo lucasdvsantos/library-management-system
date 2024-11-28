@@ -34,35 +34,43 @@ public class Member {
 		this.memberId = memberId;
 	}
 	
-	public void getBorrowedBooks() {
-		for (Book b : borrowedBooks) {
-			System.out.println(b);
+	public void listBorrowedBooks() {
+		if (borrowedBooks.isEmpty()) {
+			System.out.println("No borrowed books");
+		} else {
+			for (Book b : borrowedBooks) {
+				System.out.println(b);
+			}
 		}
 	}
 	
 	public void borrowBook(Library library, Book book) {
-		if (library.getMembers().contains(this) == true) {
-			if (book.getIsAvailable() == true) {
-				borrowedBooks.add(book);
-				book.setAvailable(false);	
-			} else {
-				System.out.println("Book not available");
-			}
+		if (!library.getMembers().contains(this)) {
+			System.out.println("Not a member of this Library");
+			return;
+		}
+		
+		if (book.getIsAvailable()) {
+			borrowedBooks.add(book);
+			book.setAvailable(false);
+			System.out.println("Successfully borrowed: " + book.getTitle());
 		} else {
-			System.out.println("Not a member from this Library");
+			System.out.println("Book is not available");
 		}
 	}
 	
 	public void returnBook(Library library, Book book) {
-		if (library.getMembers().contains(this) == true) {
-			if (borrowedBooks.contains(book) == true) {
-				borrowedBooks.remove(book);
-				book.setAvailable(true);
-			} else {
-				System.out.println("This book wasn't borrowed");
-			}
+		if (!library.getMembers().contains(this)) {
+			System.out.println("Not a member of this Library");
+			return;
+		}
+		
+		if (borrowedBooks.contains(book)) {
+			borrowedBooks.remove(book);
+			book.setAvailable(true);
+			System.out.println("Successfully returned: " + book.getTitle());
 		} else {
-			System.out.println("Not a member from this Library");
+			System.out.println("This book wasn't borrowed by you");
 		}
 	}
 

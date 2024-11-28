@@ -42,7 +42,7 @@ public class Program {
 		
 		//lib.listBooks();
 		
-		m1.getBorrowedBooks();
+		m1.listBorrowedBooks();
 		
 		System.out.println("--------------------------------------");
 		
@@ -52,12 +52,12 @@ public class Program {
 		System.out.println("--------------------------------------");
 		
 		m1.returnBook(lib, b2);
-		m1.getBorrowedBooks();
+		m1.listBorrowedBooks();
 		
 		System.out.println("--------------------------------------");
 		
 		m2.borrowBook(lib, b2);
-		m2.getBorrowedBooks();
+		m2.listBorrowedBooks();
 		
 		System.out.println("--------------------------------------");
 		
