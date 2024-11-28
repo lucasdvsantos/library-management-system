@@ -29,7 +29,7 @@ public class Librarian {
 		this.employeeId = employeeId;
 	}
 	
-	public void addBookToLibrary(Library library, Book book) {
+	public void addBook(Library library, Book book) {
 		library.addBook(book);
 	}
 	
@@ -37,11 +37,11 @@ public class Librarian {
 		library.removeBook(book);
 	}
 	
-	public Book searchBookByTitle(Library library, String title) {
-		return library.searchByTitle(title);
+	public void searchBooksByTitle(Library library, String title) {
+		library.searchByTitle(title);
 	}
 	
-	public Book searchBookByAuthor(Library library, String author) {
-		return library.searchByAuthor(author);
+	public void searchBooksByAuthor(Library library, String author) {
+		library.searchByAuthor(author);
 	}
 }

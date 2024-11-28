@@ -19,11 +19,11 @@ public class Program {
 		Book b5 =  new Book("The Lord of the Rings", "John Ronald Reuel Tolkien", "1453452345", true);
 		
 		// Adding books
-		libEmployee.addBookToLibrary(lib, b1);
-		libEmployee.addBookToLibrary(lib, b2);
-		libEmployee.addBookToLibrary(lib, b3);
-//		libEmployee.addBookToLibrary(lib, b4);
-//		libEmployee.addBookToLibrary(lib, b5);
+		libEmployee.addBook(lib, b1);
+		libEmployee.addBook(lib, b2);
+		libEmployee.addBook(lib, b3);
+		libEmployee.addBook(lib, b4);
+		libEmployee.addBook(lib, b5);
 		
 		//Listing books
 		//lib.listBooks();
@@ -46,8 +46,8 @@ public class Program {
 		
 		System.out.println("--------------------------------------");
 		
-		System.out.println(libEmployee.searchBookByTitle(lib, "1984"));
-		System.out.println(libEmployee.searchBookByAuthor(lib, "Ray Bradbury"));
+		libEmployee.searchBooksByTitle(lib, "1984");
+		libEmployee.searchBooksByAuthor(lib, "Ray Bradbury");
 		
 		System.out.println("--------------------------------------");
 		
